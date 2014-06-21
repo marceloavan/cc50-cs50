@@ -6,17 +6,17 @@
 int main()
 {
   srand(time(NULL));
-  int skittles = rand() % 1024;
-  bool continue = true;
 
-  while(continue)
+  int skittles = rand() % 1024;  
+  int shot = GetInt();
+
+  if (shot == skittles)
   {
-    int shot = GetInt();
-    if (shot == skittles)
-    {
-      continue = false;
-    }
+    printf("Correct");
+  } 
+  else 
+  {
+    printf("Value generated: %d\n",skittles);
+    printf("Incorrect\n");
   }
-  printf("Correct!");
 }
-
