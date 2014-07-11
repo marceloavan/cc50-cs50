@@ -1,7 +1,7 @@
 all: skittles credit chart
 
 skittles: skittles.c
-	gcc -ggdb -std=c99 -Wall -Werror -Wformat=0 -o skittles skittles.c -lcc50 -lm
+	gcc -ggdb -std=c99 -Wall -Werror -Wformat=0 -o skittles.bin skittles.c -lcc50 -lm
 	
 credit: credit.c
 	gcc -ggdb -std=c99 -Wall -Werror -Wformat=0 -o credit credit.c -lcc50 -lm
