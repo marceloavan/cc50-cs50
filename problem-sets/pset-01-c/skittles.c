@@ -21,7 +21,13 @@ int main()
     else 
     {
       printf("Incorrect\n");
-      printf("Value generated: %d\n",skittles);
+      if (skittles > shot)
+      {
+        printf("The value is bigger\n");
+      } else
+      {
+        printf("The value is smaller\n");
+      }
       printf("Try again: \n");
       shot = GetInt();
     }
