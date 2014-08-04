@@ -3,8 +3,9 @@
 #include <stdlib.h>
 
 // prototype (fucking interface)
-int getLength(long long value);
-long long * convertToArray(long long value, int length);
+int get_length(long long value);
+long long * convert_to_array(long long value, int length);
+int check_sum(long long * data);
 
 int main() 
 {
@@ -18,40 +19,38 @@ int main()
 
   printf("Type your card number: ");
   long long value = GetLongLong();
-  int length = getLength(value);
+  int length = get_length(value);
 
-  while (length > max_length) {
+  while (length > max_length) 
+  {
     printf("The length of card number is bigger then max permitted. Retry: ");
     value = GetLongLong();
-    length = getLength(value);
+    length = get_length(value);
   }
 
-  data = convertToArray(value, length);
+  data = convert_to_array(value, length);
 
-  printf("\nEnd %llu %llu\n", value, data[0]);
+  if (check_sum(data) == 0)  
+  {
+  }
 
-  free(data);
+  printf("End value: %llu; data-0: %llu; length: %i\n;", value, data[0], length);
 }
 
-long long * convertToArray(long long value, int length) 
+long long * convert_to_array(long long value, int length) 
 { 
-  long long data[length];
-  int i;
-  for (i = 0;value>0;i++) 
+  /* http://stackoverflow.com/questions/11656532/returning-an-array-using-c */
+  long long * data = malloc(length);
+  for (int i = length-1; i >= 0; i--) 
   {
-    if (i == length) 
-    {
-      printf("ERROR");
-      return (0);
-    }
     data[i] = value % 10;
-    printf("%llu", data[i]);
+    printf("%llu\n", data[i]);
     value /= 10;
   }
-  return (long long * )malloc(sizeof(data));  
+  return data;
 }
 
-int getLength(long long value) 
+int get_length(long long value) 
 { 
   int length = 0;
   while (value > 0) 
@@ -60,4 +59,17 @@ int getLength(long long value)
     length++;
   }
   return length;
+}
+
+/* return 1(one) when the data is valid or 0(zero) when is not valid */
+int check_sum(long long * data)
+{
+  // TODO - verify why that way do not work in this case
+  int length = sizeof(data)/sizeof(int);
+  printf("Length of array in check_sum: %i\n", length);
+  for (int i = 1; i<length; i++) 
+  {
+    
+  }
+  return 0;
 }
