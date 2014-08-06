@@ -4,8 +4,8 @@
 
 // prototype (fucking interface)
 int get_length(long long value);
-long long * convert_to_array(long long value, int length);
-int check_sum(long long * data);
+long long * convert_to_array(long long value);
+int check_sum(long long * data, int length);
 
 int main() 
 {
@@ -28,18 +28,19 @@ int main()
     length = get_length(value);
   }
 
-  data = convert_to_array(value, length);
+  data = convert_to_array(value);
 
-  if (check_sum(data) == 0)  
+  if (check_sum(data, length) == 0)  
   {
   }
 
   printf("End value: %llu; data-0: %llu; length: %i\n;", value, data[0], length);
 }
 
-long long * convert_to_array(long long value, int length) 
+long long * convert_to_array(long long value) 
 { 
   /* http://stackoverflow.com/questions/11656532/returning-an-array-using-c */
+  int length = get_length(value);
   long long * data = malloc(length);
   for (int i = length-1; i >= 0; i--) 
   {
@@ -62,14 +63,39 @@ int get_length(long long value)
 }
 
 /* return 1(one) when the data is valid or 0(zero) when is not valid */
-int check_sum(long long * data)
+/* the length is passed how a param because the pointer array */
+int check_sum(long long * data, int length)
 {
-  // TODO - verify why that way do not work in this case
-  int length = sizeof(data)/sizeof(int);
   printf("Length of array in check_sum: %i\n", length);
-  for (int i = 1; i<length; i++) 
+  long long check_count = 0;
+  int controller = 0;
+  for (int i = 0; i<length; i++) 
   {
-    
+    if (controller == 0) 
+    {
+      check_count += data[i];
+      controller = 1;
+      printf("value %llu, check_count: %llu\n", data[i], check_count);
+    } 
+    else 
+    {
+      long long value = (data[i] * 2);
+      printf("value %llu\n", value);
+      if (get_length(value) > 1)  
+      {
+        // at this point the follow error is throws: "Segmentation fault (core dumped)"
+        long long * dataValue = convert_to_array(value);
+        check_count += dataValue[0];
+        check_count += dataValue[1];
+      }
+      else
+      {
+        check_count += value;
+      }      
+      controller = 0;
+      printf("value %llu, check_count: %llu\n", data[i], check_count);
+    }
   }
+  printf("check_count: %llu\n", check_count);
   return 0;
 }
