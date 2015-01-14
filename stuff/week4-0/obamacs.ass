@@ -1,0 +1,43 @@
+﻿[Script Info]
+Title: Default Aegisub file
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 640
+PlayResY: 480
+ScaledBorderAndShadow: yes
+Last Style Storage: Default
+Audio File: ?video
+Video File: Barack Obama - Computer Science Question.mp4
+Video Aspect Ratio: 0
+Video Zoom: 8
+Video Position: 1115
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,32,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:05.65,0:00:07.64,Default,,0000,0000,0000,,Bem, senador...
+Dialogue: 0,0:00:07.64,0:00:09.64,Default,,0000,0000,0000,,Você está aqui no Google e
+Dialogue: 0,0:00:09.64,0:00:14.10,Default,,0000,0000,0000,,Eu gosto de pensar na presidência como uma entrevista de emprego
+Dialogue: 0,0:00:14.09,0:00:16.94,Default,,0000,0000,0000,,É difícil conseguir um emprego como presidente
+Dialogue: 0,0:00:17.50,0:00:18.94,Default,,0000,0000,0000,,que é o que você está tentando fazer
+Dialogue: 0,0:00:18.97,0:00:20.78,Default,,0000,0000,0000,,Também é difícil conseguir um emprego no Google
+Dialogue: 0,0:00:21.44,0:00:23.68,Default,,0000,0000,0000,,Nós temos perguntas
+Dialogue: 0,0:00:23.79,0:00:26.17,Default,,0000,0000,0000,,e nós fazemos aos nossos candidatos essas perguntas
+Dialogue: 0,0:00:26.24,0:00:29.25,Default,,0000,0000,0000,,essa aqui é do Schwuaheri Schwimmer
+Dialogue: 0,0:00:29.14,0:00:29.92,Default,,0000,0000,0000,,Ok...
+Dialogue: 0,0:00:30.94,0:00:35.20,Default,,0000,0000,0000,,Qual é... Vocês pensam que eu to brincando? Tá escrito aqui
+Dialogue: 0,0:00:35.20,0:00:40.19,Default,,0000,0000,0000,,Qual é a forma mais eficiente de ordenar 1 milhão de inteiros de 32-bits?
+Dialogue: 0,0:00:42.28,0:00:43.73,Default,,0000,0000,0000,,Bem.. Hmm...
+Dialogue: 0,0:00:44.30,0:00:46.09,Default,,0000,0000,0000,,Me desculpe, talvez eu....
+Dialogue: 0,0:00:45.49,0:00:47.60,Default,,0000,0000,0000,,Não, não, não, não, não.
+Dialogue: 0,0:00:47.34,0:00:49.60,Default,,0000,0000,0000,,Eu acho...
+Dialogue: 0,0:00:49.60,0:00:52.41,Default,,0000,0000,0000,,Eu acho que Bubble Sort não seria uma boa ideia.
+Dialogue: 0,0:00:54.80,0:00:57.89,Default,,0000,0000,0000,,Quem contou isso a ele?!
+Dialogue: 0,0:00:58.81,0:01:01.67,Default,,0000,0000,0000,,Eu não vi Ciência da Computação no seu currículo.
+Dialogue: 0,0:01:01.61,0:01:02.99,Default,,0000,0000,0000,,Nós temos nossos espiões por aí.
+Dialogue: 0,0:01:02.99,0:01:04.99,Default,,0000,0000,0000,,Bem....
+Dialogue: 0,0:01:04.99,0:01:08.33,Default,,0000,0000,0000,,Ok... Vamos fazer um outro tipo de pergunta.
+Dialogue: 0,0:01:06.99,0:01:08.99,Default,,0000,0000,0000,,

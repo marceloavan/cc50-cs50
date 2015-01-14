@@ -1,0 +1,103 @@
+<!--
+
+ajax5.html
+
+Pesquisa o valor (e os valores máximo e mínimo do dia) de uma ação através
+de quote2.php via Ajax, colocando o resultado JSON na própria página.
+
+CC50
+Gabriel Guimarães
+
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script type="text/javascript">
+    // <![CDATA[
+
+        // an XMLHttpRequest
+        var xhr = null;
+
+        /*
+         * void
+         * quote()
+         *
+         * Gets a quote.
+         */
+        function quote()
+        {
+            // instantiate XMLHttpRequest object
+            try
+            {
+                xhr = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            // handle old browsers
+            if (xhr == null)
+            {
+                alert("Ajax not supported by your browser!");
+                return;
+            }
+
+            // construct URL
+            var url = "quote3.php?symbol=" + document.getElementById("symbol").value;
+
+            // get quote
+            xhr.onreadystatechange = function() {
+
+                // only handle requests in "loaded" state
+                if (xhr.readyState == 4)
+                {
+                    // embed response in page if possible
+                    if (xhr.status == 200)
+                    {
+                        var quote = eval("(" + xhr.responseText + ")");
+                        document.getElementById("price").innerHTML = quote.price;
+                        document.getElementById("high").innerHTML = quote.high;
+                        document.getElementById("low").innerHTML = quote.low;
+                    }
+                    else
+                        alert("Error with Ajax call!");
+                }
+
+            };
+            xhr.open("GET", url, true);
+            xhr.send(null);
+        }
+
+
+        /*
+         * void
+         * handler()
+         *
+         * Handles the Ajax response.
+         */
+        function handler()
+        {
+        }
+
+    // ]]>
+    </script>
+    <title>ajax5</title>
+  </head>
+  <body>
+    <form onsubmit="quote(); return false;">
+      Symbol: <input id="symbol" type="text">
+      <br><br>
+      Price: <span id="price"></span>
+      <br>
+      High: <span id="high"></span>
+      <br>
+      Low: <span id="low"></span>
+      <br>
+      <br><br>
+      <input type="submit" value="Get Quote">
+    </form>
+  </body>
+</html>
