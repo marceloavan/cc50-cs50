@@ -31,7 +31,7 @@ int main()
   {
     printf("INVALID\n");
   } else {
-    printf(get_type_card(data, length));
+    printf("%s", get_type_card(data, length));
   }
 }
 
@@ -109,7 +109,6 @@ int check_sum(long long * data, int length)
   MasterCadr = 16 dig - Begin: 51, 52, 53 ou 55 - return: MASTER;
   Visa = 16 ou 13 dig - Begin: 4 - return: VISA;
   Otherwise = / - / - return INVALID;
-
 */
 char * get_type_card(long long * data, int length)
 {
